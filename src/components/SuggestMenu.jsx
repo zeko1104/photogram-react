@@ -27,12 +27,12 @@ const SuggestMenu = () => {
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center gap-3">
             <img
-              src={img}
+              src="https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Suggested Profile"
               className="w-10 h-10 rounded-full"
             />
             <div>
-              <h2 className="font-medium text-gray-800">Zeko</h2>
+              <h2 className="font-medium text-gray-800">Lorem Ipsum</h2>
               <p className="text-sm text-gray-500">Suggested for you</p>
             </div>
           </div>
@@ -43,12 +43,12 @@ const SuggestMenu = () => {
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center gap-3">
             <img
-              src={img}
+              src="https://images.pexels.com/photos/774095/pexels-photo-774095.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Suggested Profile"
               className="w-10 h-10 rounded-full"
             />
             <div>
-              <h2 className="font-medium text-gray-800">Zeko</h2>
+              <h2 className="font-medium text-gray-800">Lorem Ipsum</h2>
               <p className="text-sm text-gray-500">Suggested for you</p>
             </div>
           </div>
@@ -59,12 +59,12 @@ const SuggestMenu = () => {
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center gap-3">
             <img
-              src={img}
+              src="https://images.pexels.com/photos/773371/pexels-photo-773371.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Suggested Profile"
               className="w-10 h-10 rounded-full"
             />
             <div>
-              <h2 className="font-medium text-gray-800">Zeko</h2>
+              <h2 className="font-medium text-gray-800">Lorem Ipsum</h2>
               <p className="text-sm text-gray-500">Suggested for you</p>
             </div>
           </div>
@@ -75,12 +75,12 @@ const SuggestMenu = () => {
         <div className="flex items-center justify-between py-2">
           <div className="flex items-center gap-3">
             <img
-              src={img}
+              src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Suggested Profile"
               className="w-10 h-10 rounded-full"
             />
             <div>
-              <h2 className="font-medium text-gray-800">Zeko</h2>
+              <h2 className="font-medium text-gray-800">Lorem Ipsum</h2>
               <p className="text-sm text-gray-500">Suggested for you</p>
             </div>
           </div>
