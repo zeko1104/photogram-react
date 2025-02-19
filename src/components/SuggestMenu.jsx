@@ -2,7 +2,7 @@ import img from "../assets/images/profile-removebg-preview.png";
 
 const SuggestMenu = () => {
   return (
-    <div className="w-80 min-h-screen fixed right-0 top-0 p-4 text-black border-l border-gray-300 bg-white shadow-lg">
+    <div className="w-80 min-h-screen fixed right-0 top-0 p-4 text-black border-l border-gray-300 bg-white">
       {/* Profile Section */}
       <div className="flex items-center gap-3 mb-6">
         <img src={img} alt="Profile" className="w-10 h-10 rounded-full" />
