@@ -27,7 +27,6 @@ const DashboardMenu = () => {
           Photogram
         </h1>
       </div>
-
       {/* Menü */}
       <ul className="space-y-1">
         <li className="flex items-center gap-3 text-lg text-black hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
@@ -68,7 +67,7 @@ const DashboardMenu = () => {
         </li>
       </ul>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-      <ul className="space-y-4">
+        <ul className="space-y-4">
           <li className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-500">
             <IoSettingsOutline className="text-xl" />
             <Link to="/settings">Settings</Link>
