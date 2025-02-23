@@ -8,7 +8,7 @@ const Profile = () => {
   return (
     <div className="min-h-screen ">
       <DashboardMenu />
-      <div className="max-w-4xl mx-auto p-6">
+      <div className="max-w-4xl ml-80 p-6">
         {/* Profile Header */}
         <div className="flex items-center space-x-6 bg-white p-6 rounded-lg shadow-md">
           <div className="">

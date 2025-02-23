@@ -3,6 +3,8 @@ import HomePage from "../pages/HomePage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
+import ExplorePage from "../pages/ExplorePage";
+
 
 
 const AppRoute = () => {
@@ -12,6 +14,7 @@ const AppRoute = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/explore" element={<ExplorePage />} />
     </Routes>
   );
 };

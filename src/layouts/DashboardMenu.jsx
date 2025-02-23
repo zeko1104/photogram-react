@@ -20,7 +20,7 @@ import Modal from "../components/Modal";
 const DashboardMenu = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <div className="w-64 h-full fixed left-0 top-0 p-6 border-r border-gray-300 bg-white">
+    <div className="w-64 h-full fixed left-0 top-0 p-6 border-r border-gray-300 bg-white z-50">
       {/* Logo */}
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-800 font-serif">
