@@ -5,7 +5,7 @@ import DashboardMenu from "../layouts/DashboardMenu";
 
 const HomePage = () => {
   return (
-    <div className="flex">
+    <div className="flex dark:bg-neutral-950 dark:text-white">
       {/* Sol Sidebar */}
       <DashboardMenu />
 

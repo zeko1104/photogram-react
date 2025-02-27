@@ -6,7 +6,7 @@ import img from "../assets/images/profile-removebg-preview.png";
 
 const Profile = () => {
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen dark:bg-neutral-950 ">
       <DashboardMenu />
       <div className="max-w-4xl ml-80 p-6">
         {/* Profile Header */}
@@ -46,16 +46,16 @@ const Profile = () => {
           </div>
         </div>
         {/* Profile Tabs */}
-        <div className="flex justify-center space-x-6 mt-6 border-t pt-4">
-          <button className="flex items-center space-x-2 text-gray-600 hover:text-black">
+        <div className="flex justify-center space-x-6 mt-6 border-t pt-4 ">
+          <button className="flex items-center space-x-2 text-gray-600 hover:text-black dark:hover:text-white">
             <BsFillSignpostSplitFill className="text-xl" />
             <h2 className="text-lg font-medium">POSTS</h2>
           </button>
-          <button className="flex items-center space-x-2 text-gray-600 hover:text-black">
+          <button className="flex items-center space-x-2 text-gray-600 hover:text-black dark:hover:text-white">
             <FaRegSave className="text-xl" />
             <h2 className="text-lg font-medium">SAVED</h2>
           </button>
-          <button className="flex items-center space-x-2 text-gray-600 hover:text-black">
+          <button className="flex items-center space-x-2 text-gray-600 hover:text-black dark:hover:text-white">
             <FaUserTag className="text-xl" />
             <h2 className="text-lg font-medium">TAGGED</h2>
           </button>

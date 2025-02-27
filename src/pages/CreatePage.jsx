@@ -2,10 +2,10 @@ import DashboardMenu from "../layouts/DashboardMenu";
 
 const CreatePage = () => {
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex dark:bg-neutral-950 dark:text-white">
       <DashboardMenu />
       <div className="max-w-4xl w-full mx-96 p-6">
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-white p-6 rounded-lg shadow-md ">
           <h2 className="text-2xl font-semibold mb-4">Create a New Post</h2>
           <form className="space-y-4">
             <div>

@@ -2,12 +2,12 @@ import img from "../assets/images/profile-removebg-preview.png";
 
 const SuggestMenu = () => {
   return (
-    <div className="w-80 min-h-screen fixed right-0 top-0 p-4 text-black border-l border-gray-300 bg-white">
+    <div className="w-80 min-h-screen fixed right-0 top-0 p-4 text-black border-l border-gray-300 bg-white dark:bg-neutral-950">
       {/* Profile Section */}
       <div className="flex items-center gap-3 mb-6">
         <img src={img} alt="Profile" className="w-10 h-10 rounded-full" />
         <div className="flex flex-col">
-          <h2 className="font-semibold text-gray-800">Zeko</h2>
+          <h2 className="font-semibold text-gray-800 dark:text-white">Zeko</h2>
           <button className="text-blue-500 text-sm hover:underline">
             Switch
           </button>
@@ -31,8 +31,8 @@ const SuggestMenu = () => {
               alt="Suggested Profile"
               className="w-10 h-10 rounded-full"
             />
-            <div>
-              <h2 className="font-medium text-gray-800">Lorem Ipsum</h2>
+            <div className="">
+              <h2 className="font-medium text-gray-800 dark:text-white">Lorem Ipsum</h2>
               <p className="text-sm text-gray-500">Suggested for you</p>
             </div>
           </div>
@@ -48,7 +48,7 @@ const SuggestMenu = () => {
               className="w-10 h-10 rounded-full"
             />
             <div>
-              <h2 className="font-medium text-gray-800">Lorem Ipsum</h2>
+              <h2 className="font-medium text-gray-800 dark:text-white">Lorem Ipsum</h2>
               <p className="text-sm text-gray-500">Suggested for you</p>
             </div>
           </div>
@@ -64,7 +64,7 @@ const SuggestMenu = () => {
               className="w-10 h-10 rounded-full"
             />
             <div>
-              <h2 className="font-medium text-gray-800">Lorem Ipsum</h2>
+              <h2 className="font-medium text-gray-800 dark:text-white">Lorem Ipsum</h2>
               <p className="text-sm text-gray-500">Suggested for you</p>
             </div>
           </div>
@@ -80,7 +80,7 @@ const SuggestMenu = () => {
               className="w-10 h-10 rounded-full"
             />
             <div>
-              <h2 className="font-medium text-gray-800">Lorem Ipsum</h2>
+              <h2 className="font-medium text-gray-800 dark:text-white">Lorem Ipsum</h2>
               <p className="text-sm text-gray-500">Suggested for you</p>
             </div>
           </div>

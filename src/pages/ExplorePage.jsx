@@ -7,7 +7,7 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 
 const ExplorePage = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center  p-4">
+    <div className="min-h-screen flex flex-col items-center dark:bg-neutral-950 dark:text-white  p-4">
       <DashboardMenu />
       <Box sx={{ width: 800, maxWidth: 1000, height: "auto", overflowY: "hidden" }}>
         <ImageList variant="masonry" cols={3} gap={8} className="w-full">
