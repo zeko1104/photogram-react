@@ -46,7 +46,7 @@ const Posts = () => {
         <input 
           type="text" 
           placeholder="Write a comment..." 
-          className="w-full border rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
+          className="dark:text-black w-full border rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
         />
       </div>
     </div>
