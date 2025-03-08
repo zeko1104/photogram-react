@@ -35,15 +35,16 @@ const MessagePage = () => {
   const [selectedUser, setSelectedUser] = useState(null);
 
   return (
-    <div className="min-h-screen dark:bg-neutral-950 flex">
+    <div className="flex h-screen dark:bg-neutral-950">
+      {/* Sol menyu */}
       <DashboardMenu />
 
       {/* Ortada Chat bölməsi */}
-      <div className="flex-1 flex flex-col items-center justify-center min-h-screen">
+      <div className="flex flex-1 h-full">
         {selectedUser ? (
-          <ChatPage user={selectedUser} />
+          <ChatPage user={selectedUser} className="flex-1 h-full" />
         ) : (
-          <div className="flex flex-col items-center text-center">
+          <div className="flex flex-col items-center justify-center flex-1 h-full">
             <MdChatBubbleOutline className="text-6xl text-gray-400 dark:text-gray-300" />
             <h1 className="text-gray-800 dark:text-gray-100 font-semibold mt-2">
               Your messages
@@ -56,7 +57,7 @@ const MessagePage = () => {
       </div>
 
       {/* Sağ tərəfdə mesaj siyahısı */}
-      <div className="w-80 min-h-screen relative border-l border-gray-300 bg-white dark:bg-neutral-950 p-4">
+      <div className="w-80 border-l border-gray-300 bg-white dark:bg-neutral-950 p-4 overflow-auto">
         <div className="flex items-center gap-3 mb-6 bg-gray-100 dark:bg-neutral-800 p-2 rounded-lg">
           <input
             placeholder="Search..."
@@ -68,32 +69,31 @@ const MessagePage = () => {
           </button>
         </div>
 
-        <div>
-          <h1 className="font-semibold text-gray-700 dark:text-gray-300 mb-4">
-            Messages
-          </h1>
-          <div className="space-y-3">
-            {users.map((user) => (
-              <div
-                key={user.id}
-                onClick={() => setSelectedUser(user)}
-                className="flex items-center gap-3   text-black hover:bg-gray-100 dark:hover:bg-white  p-2 rounded-lg cursor-pointer transition"
-              >
-                <img
-                  src={user.image}
-                  alt="Profile"
-                  className="w-10 h-10 rounded-full border border-gray-300 object-cover"
-                />
-                <h1 className="dark:text-white dark:hover:text-black text-black font-medium">
-                  {user.name}
-                </h1>
-              </div>
-            ))}
-          </div>
-        </div>
+        <h1 className="font-semibold text-gray-700 dark:text-gray-300 mb-4">
+          Messages
+        </h1>
+        <ul className="space-y-3">
+          {users.map((user) => (
+            <li
+              key={user.id}
+              onClick={() => setSelectedUser(user)}
+              className="flex items-center gap-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 p-2 rounded-lg cursor-pointer transition"
+            >
+              <img
+                src={user.image}
+                alt="Profile"
+                className="w-10 h-10 rounded-full border border-gray-300 object-cover"
+              />
+              <h1 className="dark:text-white text-black font-medium">
+                {user.name}
+              </h1>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
 };
 
 export default MessagePage;
+

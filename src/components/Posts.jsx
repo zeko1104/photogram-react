@@ -12,7 +12,7 @@ const Posts = () => {
       <div className="flex justify-between items-center border-b pb-2">
         <div className="flex items-center space-x-2">
           <img src={img} alt="Profile" className="w-10 h-10 rounded-full bg-gray-300" />
-          <h1 className="font-semibold">Zeko</h1>
+          <h1 className="font-semibold text-black">Zeko</h1>
         </div>
         <div className="flex items-center space-x-2 text-gray-500">
           <h2 className="text-sm">44m</h2>
