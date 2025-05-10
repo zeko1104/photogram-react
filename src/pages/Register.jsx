@@ -1,21 +1,32 @@
 import { useState } from "react";
-import { IoLogoFacebook } from "react-icons/io";
+import axios from "axios";
 
 const Register = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
     confirmPassword: "",
-    username: "",
+    fullName: "",
   });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("User Data:", formData);
+    
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    try {
+      const response = await axios.post("https://localhost:7104/api/Account/register", formData);
+      alert(response.data);
+    } catch (error) {
+      alert(error.response?.data || "Registration failed");
+    }
   };
 
   return (
@@ -24,16 +35,6 @@ const Register = () => {
         <h1 className="text-4xl font-bold text-gray-800 font-serif text-center mb-6">
           Photogram
         </h1>
-        <button className="flex items-center justify-center space-x-2 w-full bg-blue-500 text-white py-2 rounded-md font-semibold hover:bg-blue-600 transition">
-          <IoLogoFacebook size={20} />
-          <p>Log in with Facebook</p>
-        </button>
-        <div className="flex items-center justify-center my-4">
-          <span className="border-t w-1/3"></span>
-          <p className="mx-2 text-gray-500 text-sm">OR</p>
-          <span className="border-t w-1/3"></span>
-        </div>
-
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <input
             type="text"
@@ -61,9 +62,9 @@ const Register = () => {
           />
           <input
             type="text"
-            placeholder="Username"
-            name="username"
-            value={formData.username}
+            placeholder="Full Name"
+            name="fullName"
+            value={formData.fullName}
             onChange={handleChange}
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
