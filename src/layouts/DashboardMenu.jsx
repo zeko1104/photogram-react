@@ -1,14 +1,6 @@
-import { FaHome } from "react-icons/fa";
-import { IoSearchSharp } from "react-icons/io5";
-import { IoSettingsOutline } from "react-icons/io5";
-import { FaRegSave } from "react-icons/fa";
-import { MdLogout } from "react-icons/md";
-import {
-  MdOutlineExplore,
-  MdChatBubbleOutline,
-  MdOutlineCreate,
-} from "react-icons/md";
-import { FaVideo, FaRegHeart } from "react-icons/fa";
+import { FaHome, FaVideo, FaRegHeart, FaRegSave } from "react-icons/fa";
+import { IoSearchSharp, IoSettingsOutline } from "react-icons/io5";
+import { MdOutlineExplore, MdChatBubbleOutline, MdOutlineCreate, MdLogout } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import img from "../assets/images/profile-removebg-preview.png";
 import { Link } from "react-router-dom";
@@ -16,59 +8,89 @@ import { useState } from "react";
 import Modal from "../components/Modal";
 import DarkModeToggle from "../components/ToggleButton";
 
-
 const DashboardMenu = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <div className="w-64 h-full fixed left-0 top-0 p-6 border-r border-gray-300 dark:bg-neutral-950 dark:text-white bg-white z-50">
-      {/* Logo */}
-      <div className="mb-6">
+    <div className="sm:w-64 sm:h-full sm:fixed sm:left-0 sm:top-0 sm:p-6 sm:border-r sm:border-gray-300 
+      sm:bg-white sm:dark:bg-neutral-950 sm:z-50 
+      w-full h-20 fixed bottom-0 left-0 bg-white dark:bg-neutral-950 
+      flex sm:block justify-around items-center border-gray-300 z-50 ">
+
+      {/* Logo (desktop only) */}
+      <div className="mb-6 hidden sm:block">
         <h1 className="text-2xl font-bold dark:text-white text-gray-800 font-serif">
           Photogram
         </h1>
       </div>
-      {/* Menü */}
-      <ul className="space-y-1">
-        <li className="flex items-center gap-3 text-lg dark:text-white dark:hover:text-black  text-black hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-          <FaHome />
-          <Link to="/">Home</Link>
+
+      {/* Menu */}
+      <ul className="sm:space-y-1 flex sm:flex-col gap-4 sm:gap-0">
+        {/* Home */}
+        <li className="dark:hover:text-black  flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
+          <FaHome className="text-xl " />
+          <Link className="hidden sm:inline" to="/">Home</Link>
         </li>
-        <li className="flex items-center gap-3 text-lg dark:text-white dark:hover:text-black text-black hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-          <IoSearchSharp />
-          <Link to="/search">Search</Link>
+
+        {/* Search */}
+        <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
+          <IoSearchSharp className="text-xl" />
+          <Link className="hidden sm:inline" to="/search">Search</Link>
         </li>
-        <li className="flex items-center gap-3 text-lg dark:text-white dark:hover:text-black text-black hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-          <MdOutlineExplore />
-          <Link to="/explore">Explore</Link>
+
+        {/* Explore */}
+        <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
+          <MdOutlineExplore className="text-xl" />
+          <Link className="hidden sm:inline" to="/explore">Explore</Link>
         </li>
-        <li className="flex items-center gap-3 text-lg dark:text-white dark:hover:text-black text-black hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-          <FaVideo />
-          <Link to="/reels">Reels</Link>
+
+        {/* Reels */}
+        <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
+          <FaVideo className="text-xl" />
+          <Link className="hidden sm:inline" to="/reels">Reels</Link>
         </li>
-        <li className="flex items-center gap-3 text-lg dark:text-white dark:hover:text-black text-black hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-          <MdChatBubbleOutline />
-          <Link to="/messages">Messages</Link>
+
+        {/* Messages */}
+        <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
+          <MdChatBubbleOutline className="text-xl" />
+          <Link className="hidden sm:inline" to="/messages">Messages</Link>
         </li>
-        <li className="flex items-center gap-3 text-lg dark:text-white dark:hover:text-black text-black hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-          <FaRegHeart />
+
+        {/* Notifications (desktop only) */}
+        <li className="dark:hover:text-black hidden sm:flex items-center gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
+          <FaRegHeart className="text-xl" />
           <Link to="/notifications">Notifications</Link>
         </li>
-        <li className="flex items-center gap-3 text-lg dark:text-white dark:hover:text-black text-black hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-          <MdOutlineCreate />
+
+        {/* Create (desktop only) */}
+        <li className="dark:hover:text-black hidden sm:flex items-center gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
+          <MdOutlineCreate className="text-xl" />
           <Link to="/create">Create</Link>
         </li>
-        <li className="flex items-center gap-3 text-lg dark:text-white dark:hover:text-black text-black hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
+
+        {/* Profile */}
+        <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
           <img src={img} alt="Profile" className="w-8 h-8 rounded-full" />
-          <Link to="/profile">Profile</Link>
+          <Link className="hidden sm:inline" to="/profile">Profile</Link>
         </li>
-        <li className="flex items-center gap-3 text-lg dark:text-white dark:hover:text-black text-black hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
+
+        {/* More button */}
+        <li className="dark:hover:text-white sm:hidden flex items-center justify-center text-lg text-black dark:text-white cursor-pointer">
+          <button onClick={() => setIsModalOpen(true)}>
+            <RxHamburgerMenu className="text-xl" />
+          </button>
+        </li>
+
+        <li className="dark:hover:text-black hidden sm:flex items-center gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
           <RxHamburgerMenu />
           <button onClick={() => setIsModalOpen(true)}>More</button>
         </li>
       </ul>
+
+      {/* Modal for More options */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ul className="space-y-4">
-          <li className="flex items-center gap-3  text-gray-700 dark:text-gray-300 hover:text-blue-500">
+          <li className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-500">
             <IoSettingsOutline className="text-xl" />
             <Link to="/settings">Settings</Link>
           </li>
@@ -77,7 +99,7 @@ const DashboardMenu = () => {
             <Link to="/saved">Saved</Link>
           </li>
           <li className="flex items-center justify-between text-gray-700 dark:text-gray-300 hover:text-blue-500">
-            <DarkModeToggle/>
+            <DarkModeToggle />
           </li>
           <li className="flex items-center gap-3 text-red-500 hover:text-red-600 cursor-pointer">
             <MdLogout className="text-xl" />

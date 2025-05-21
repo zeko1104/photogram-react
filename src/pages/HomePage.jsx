@@ -5,7 +5,7 @@ import DashboardMenu from "../layouts/DashboardMenu";
 
 const HomePage = () => {
   return (
-    <div className="flex dark:bg-neutral-950 dark:text-white">
+    <div className=" dark:bg-neutral-950 dark:text-white">
       {/* Sol Sidebar */}
       <DashboardMenu />
 
@@ -15,9 +15,12 @@ const HomePage = () => {
 
         {/* Postlar burada göstərilir */}
         <div className="mt-4 space-y-4">
-          <Posts />
-          <Posts />
-          <Posts />
+          {
+            // Post komponentini burada istifadə edirik
+            [1, 2, 3, 4, 5].map((_, index) => (
+              <Posts key={index} />
+            ))
+          }
         </div>
       </div>
 
