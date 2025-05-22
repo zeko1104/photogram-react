@@ -7,7 +7,7 @@ import img from "../assets/images/profile-removebg-preview.png";
 
 const Posts = () => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-4 max-w-md mx-auto">
+    <div className="bg-white shadow-lg rounded-lg p-4 max-w-md w-full mx-auto mt-4">
       {/* Post Title */}
       <div className="flex justify-between items-center border-b pb-2">
         <div className="flex items-center space-x-2">

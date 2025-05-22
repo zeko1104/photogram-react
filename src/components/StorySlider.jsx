@@ -62,10 +62,21 @@ function StorySlider() {
     slidesToScroll: 2,
     arrows: true,
     variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 640, 
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          arrows: false,
+          variableWidth: false,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="w-full ">
+    <div className="w-full sticky top-0 z-40 bg-white dark:bg-neutral-950 px-2 py-2">
       <Slider {...settings}>
         {stories.map((story) => (
           <div key={story.id} className="flex flex-col items-center mx-2">
@@ -74,7 +85,7 @@ function StorySlider() {
               style={{ backgroundImage: `url(${story.image})` }}
             ></div>
             <div className="text-center text-sm mt-2">
-              <span className="">{story.name}</span>
+              <span>{story.name}</span>
             </div>
           </div>
         ))}
