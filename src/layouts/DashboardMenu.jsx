@@ -1,6 +1,11 @@
 import { FaHome, FaVideo, FaRegHeart, FaRegSave } from "react-icons/fa";
 import { IoSearchSharp, IoSettingsOutline } from "react-icons/io5";
-import { MdOutlineExplore, MdChatBubbleOutline, MdOutlineCreate, MdLogout } from "react-icons/md";
+import {
+  MdOutlineExplore,
+  MdChatBubbleOutline,
+  MdOutlineCreate,
+  MdLogout,
+} from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import img from "../assets/images/profile-removebg-preview.png";
 import { Link } from "react-router-dom";
@@ -12,11 +17,12 @@ const DashboardMenu = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="sm:w-64 sm:h-full sm:fixed sm:left-0 sm:top-0 sm:p-6 sm:border-r sm:border-gray-300 
+    <div
+      className="sm:w-64 sm:h-full sm:fixed sm:left-0 sm:top-0 sm:p-6 sm:border-r sm:border-gray-300 
       sm:bg-white sm:dark:bg-neutral-950 sm:z-50 
       w-full h-20 fixed bottom-0 left-0 bg-white dark:bg-neutral-950 
-      flex sm:block justify-around items-center border-gray-300 z-50 ">
-
+      flex sm:block justify-around items-center border-gray-300 z-50 "
+    >
       {/* Logo (desktop only) */}
       <div className="mb-6 hidden sm:block">
         <h1 className="text-2xl font-bold dark:text-white text-gray-800 font-serif">
@@ -27,40 +33,52 @@ const DashboardMenu = () => {
       {/* Menu */}
       <ul className="sm:space-y-1 flex sm:flex-col gap-4 sm:gap-0">
         {/* Home */}
-        <li className="dark:hover:text-black  flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
-          <FaHome className="text-xl " />
-          <Link className="hidden sm:inline" to="/">Home</Link>
-        </li>
+        <Link className="sm:inline" to="/">
+          <li className="dark:hover:text-black  flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
+            <FaHome className="text-xl " />
+            <span className="hidden sm:inline">Home</span>
+          </li>
+        </Link>
 
         {/* Search */}
-        <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
-          <IoSearchSharp className="text-xl" />
-          <Link className="hidden sm:inline" to="/search">Search</Link>
-        </li>
+        <Link className="sm:inline" to="/search">
+          <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
+            <IoSearchSharp className="text-xl" />
+            <span className="hidden sm:inline">Search</span>
+          </li>
+        </Link>
 
         {/* Explore */}
-        <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
-          <MdOutlineExplore className="text-xl" />
-          <Link className="hidden sm:inline" to="/explore">Explore</Link>
-        </li>
+        <Link className="sm:inline" to="/explore">
+          <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
+            <MdOutlineExplore className="text-xl" />
+            <span className="hidden sm:inline">Explore</span>
+          </li>
+        </Link>
 
         {/* Reels */}
-        <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
-          <FaVideo className="text-xl" />
-          <Link className="hidden sm:inline" to="/reels">Reels</Link>
-        </li>
+        <Link className="sm:inline" to="/reels">
+          <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
+            <FaVideo className="text-xl" />
+            <span className="hidden sm:inline">Reels</span>
+          </li>
+        </Link>
 
         {/* Messages */}
-        <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
-          <MdChatBubbleOutline className="text-xl" />
-          <Link className="hidden sm:inline" to="/messages">Messages</Link>
-        </li>
+        <Link className="sm:inline" to="/messages">
+          <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
+            <MdChatBubbleOutline className="text-xl" />
+            <span className="hidden sm:inline">Messages</span>
+          </li>
+        </Link>
 
         {/* Notifications (desktop only) */}
-        <li className="dark:hover:text-black hidden sm:flex items-center gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-          <FaRegHeart className="text-xl" />
-          <Link to="/notifications">Notifications</Link>
-        </li>
+        <Link to="/notifications">
+          <li className="dark:hover:text-black hidden sm:flex items-center gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
+            <FaRegHeart className="text-xl" />
+            <span className="hidden sm:inline">Notifications</span>
+          </li>
+        </Link>
 
         {/* Create (desktop only) */}
         <li className="dark:hover:text-black hidden sm:flex items-center gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
@@ -69,10 +87,12 @@ const DashboardMenu = () => {
         </li>
 
         {/* Profile */}
-        <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
-          <img src={img} alt="Profile" className="w-8 h-8 rounded-full" />
-          <Link className="hidden sm:inline" to="/profile">Profile</Link>
-        </li>
+        <Link className="sm:inline" to="/profile">
+          <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
+            <img src={img} alt="Profile" className="w-8 h-8 rounded-full" />
+            <span className="hidden sm:inline">Profile</span>
+          </li>
+        </Link>
 
         {/* More button */}
         <li className="dark:hover:text-white sm:hidden flex items-center justify-center text-lg text-black dark:text-white cursor-pointer">
