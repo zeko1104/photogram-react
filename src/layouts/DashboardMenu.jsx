@@ -73,7 +73,7 @@ const DashboardMenu = () => {
         </Link>
 
         {/* Notifications (desktop only) */}
-        <Link to="/notifications">
+        <Link className="max-sm:hidden" to="/notifications">
           <li className="dark:hover:text-black hidden sm:flex items-center gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
             <FaRegHeart className="text-xl" />
             <span className="hidden sm:inline">Notifications</span>
@@ -81,10 +81,12 @@ const DashboardMenu = () => {
         </Link>
 
         {/* Create (desktop only) */}
-        <li className="dark:hover:text-black hidden sm:flex items-center gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
-          <MdOutlineCreate className="text-xl" />
-          <Link to="/create">Create</Link>
-        </li>
+        <Link className="max-sm:hidden" to="/create">
+          <li className="dark:hover:text-black hidden sm:flex items-center gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-3 rounded-lg cursor-pointer">
+            <MdOutlineCreate className="text-xl" />
+            <span className="hidden sm:inline">Create</span>
+          </li>
+        </Link>
 
         {/* Profile */}
         <Link className="sm:inline" to="/profile">
