@@ -15,6 +15,7 @@ import DarkModeToggle from "../components/ToggleButton";
 
 const DashboardMenu = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchModal, setSearchModal] = useState(false);
 
   return (
     <div
@@ -41,7 +42,7 @@ const DashboardMenu = () => {
         </Link>
 
         {/* Search */}
-        <Link className="sm:inline" to="/search">
+        <Link className="sm:inline" onClick={() => setSearchModal(true)}>
           <li className="dark:hover:text-black flex items-center justify-center sm:justify-start gap-1 sm:gap-3 text-lg text-black dark:text-white hover:bg-gray-100 p-2 sm:p-3 rounded-lg cursor-pointer">
             <IoSearchSharp className="text-xl" />
             <span className="hidden sm:inline">Search</span>
@@ -128,6 +129,70 @@ const DashboardMenu = () => {
             <button>Logout</button>
           </li>
         </ul>
+      </Modal>
+
+      <Modal isOpen={searchModal} onClose={() => setSearchModal(false)}>
+        <div className="">
+          <div className="">
+            <h1 className="text-2xl font-bold dark:text-white text-gray-800  mb-4">
+              Search
+            </h1>
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full p-2 border border-gray-300 rounded-lg dark:bg-neutral-800 dark:text-white"
+            />
+          </div>
+          <div className="">
+            <ul>
+              <li className="mt-4">
+                <Link
+                  to="/search/users"
+                  className="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500"
+                >
+                  <div className="flex items-center gap-3 ">
+                    <img
+                      src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600"
+                      alt="User 1"
+                      className="w-8 h-8 rounded-full object-cover"
+                    />
+                    <h1>User 1</h1>
+                  </div>
+                </Link>
+              </li>
+               <li className="mt-4">
+                <Link
+                  to="/search/users"
+                  className="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500"
+                >
+                  <div className="flex items-center gap-3">
+                    <img
+                      src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=600"
+                      alt="User 1"
+                      className="w-8 h-8 rounded-full object-cover"
+                    />
+                    <h1>User 1</h1>
+                  </div>
+                </Link>
+              </li>
+              <li className="mt-4">
+                <Link
+                  to="/search/users"
+                  className="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500"
+                >
+                  <div className="flex items-center gap-3">
+                    <img
+                      src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600"
+                      alt="User 1"
+                      className="w-8 h-8 rounded-full object-cover"
+                    />
+                    <h1>User 1</h1>
+                  </div>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </Modal>
     </div>
   );
