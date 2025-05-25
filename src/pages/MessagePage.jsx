@@ -3,6 +3,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import { useState } from "react";
 import ChatPage from "./ChatPage";
 import { MdChatBubbleOutline } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const users = [
   {
@@ -40,7 +41,7 @@ const MessagePage = () => {
       <DashboardMenu />
 
       {/* Ortada Chat bölməsi */}
-      <div className="flex flex-1 h-full">
+      <div className="flex flex-1 h-full max-sm:hidden">
         {selectedUser ? (
           <ChatPage user={selectedUser} className="flex-1 h-full" />
         ) : (
@@ -76,17 +77,26 @@ const MessagePage = () => {
           {users.map((user) => (
             <li
               key={user.id}
-              onClick={() => setSelectedUser(user)}
               className="flex items-center gap-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-800 p-2 rounded-lg cursor-pointer transition"
+              onClick={() => {
+                if (window.innerWidth > 640) {
+                  // Desktop
+                  setSelectedUser(user);
+                }
+              }}
             >
-              <img
-                src={user.image}
-                alt="Profile"
-                className="w-10 h-10 rounded-full border border-gray-300 object-cover"
-              />
-              <h1 className="dark:text-white text-black font-medium">
-                {user.name}
-              </h1>
+              <Link
+                className="flex items-center gap-3 w-full"
+              >
+                <img
+                  src={user.image}
+                  alt="Profile"
+                  className="w-10 h-10 rounded-full border border-gray-300 object-cover"
+                />
+                <h1 className="dark:text-white text-black font-medium">
+                  {user.name}
+                </h1>
+              </Link>
             </li>
           ))}
         </ul>
@@ -96,4 +106,3 @@ const MessagePage = () => {
 };
 
 export default MessagePage;
-

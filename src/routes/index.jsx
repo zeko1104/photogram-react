@@ -20,7 +20,7 @@ const AppRoute = () => {
       <Route path="/explore" element={<ExplorePage />} />
       <Route path="/create" element={<CreatePage />} />
       <Route path="/messages" element={<MessagePage />} />
-      <Route path="/chatpage" element={<ChatPage/>} />
+      <Route path="/messages:id" element={<ChatPage />} />
     </Routes>
   );
 };
