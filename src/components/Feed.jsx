@@ -1,6 +1,9 @@
-
+import { useState } from "react";
+import Modal from "../components/Modal";
 
 const Feed = () => {
+  const [postModal, setPostModal] = useState(false);
+  const [selectedPost, setSelectedPost] = useState(null);
   const itemData = [
     {
       img: "https://images.unsplash.com/photo-1549388604-817d15aa0110",
@@ -124,25 +127,49 @@ const Feed = () => {
     },
   ];
 
+  const handlePostClick = (post) => {
+    setSelectedPost(post);
+    setPostModal(true);
+  };
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl mx-auto">
-      {itemData.map((item, index) => (
-        <div
-          key={index}
-          className="bg-white dark:bg-neutral-800 rounded-lg shadow p-4 "
-        >
-          <img
-            src={`${item.img}?w=600&fit=crop&auto=format`}
-            alt={item.title}
-            className="w-full h-60 object-cover rounded-md mb-2 cursor-pointer"
-          />
-          <h3 className="text-lg font-semibold cursor-pointer">{item.title}</h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            by {item.author}
-          </p>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl mx-auto">
+        {itemData.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white dark:bg-neutral-800 rounded-lg shadow p-4 cursor-pointer"
+            onClick={() => handlePostClick(item)}
+          >
+            <img
+              src={`${item.img}?w=600&fit=crop&auto=format`}
+              alt={item.title}
+              className="w-full h-60 object-cover rounded-md mb-2"
+            />
+            <h3 className="text-lg font-semibold">{item.title}</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              by {item.author}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <Modal isOpen={postModal} onClose={() => setPostModal(false)}>
+        {selectedPost && (
+          <div className="bg-white dark:bg-neutral-800 rounded-lg shadow p-4">
+            <img
+              src={`${selectedPost.img}?w=600&fit=crop&auto=format`}
+              alt={selectedPost.title}
+              className="w-full h-60 object-cover rounded-md mb-2"
+            />
+            <h3 className="text-lg font-semibold">{selectedPost.title}</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              by {selectedPost.author}
+            </p>
+          </div>
+        )}
+      </Modal>
+    </>
   );
 };
 
