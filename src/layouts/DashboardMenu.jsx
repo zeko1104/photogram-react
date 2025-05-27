@@ -26,9 +26,11 @@ const DashboardMenu = () => {
     >
       {/* Logo (desktop only) */}
       <div className="mb-6 hidden sm:block">
-        <h1 className="text-2xl font-bold dark:text-white text-gray-800 font-serif">
-          Photogram
-        </h1>
+        <Link to={"/"}>
+          <h1 className="text-2xl font-bold dark:text-white text-gray-800 font-serif">
+            Photogram
+          </h1>
+        </Link>
       </div>
 
       {/* Menu */}
@@ -160,7 +162,7 @@ const DashboardMenu = () => {
                   </div>
                 </Link>
               </li>
-               <li className="mt-4">
+              <li className="mt-4">
                 <Link
                   to="/search/users"
                   className="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500"

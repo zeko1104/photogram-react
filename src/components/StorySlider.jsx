@@ -81,7 +81,7 @@ function StorySlider() {
         {stories.map((story) => (
           <div key={story.id} className="flex flex-col items-center mx-2">
             <div
-              className="w-20 h-20 rounded-full border-2 border-blue-500 bg-cover bg-center"
+              className="w-20 h-20 rounded-full border-2 border-blue-500 bg-cover bg-center cursor-pointer"
               style={{ backgroundImage: `url(${story.image})` }}
             ></div>
             <div className="text-center text-sm mt-2">

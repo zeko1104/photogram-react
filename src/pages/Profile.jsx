@@ -15,7 +15,11 @@ const Profile = () => {
       <div className="flex-1 w-full sm:ml-80 p-4 sm:p-6">
         {/* Profil başlığı */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-6 bg-white p-4 sm:p-6 rounded-lg shadow-md dark:bg-neutral-900">
-          <img src={img} className="w-24 h-24 rounded-full mb-4 sm:mb-0" alt="profile" />
+          <img
+            src={img}
+            className="w-24 h-24 rounded-full mb-4 sm:mb-0"
+            alt="profile"
+          />
           <div className="text-center sm:text-left">
             <h2 className="text-2xl font-semibold dark:text-white">Zeko</h2>
             <div className="flex flex-wrap justify-center sm:justify-start items-center gap-2 mt-3">
@@ -32,9 +36,15 @@ const Profile = () => {
 
         {/* Statistika */}
         <div className="flex justify-around text-center mt-6 bg-white p-4 rounded-lg shadow-md dark:bg-neutral-900 dark:text-white">
-          <p><span className="font-bold">0</span> posts</p>
-          <p><span className="font-bold">0</span> followers</p>
-          <p><span className="font-bold">0</span> following</p>
+          <p>
+            <span className="font-bold">0</span> posts
+          </p>
+          <p>
+            <span className="font-bold">0</span> followers
+          </p>
+          <p>
+            <span className="font-bold">0</span> following
+          </p>
         </div>
 
         {/* Story Highlights */}
